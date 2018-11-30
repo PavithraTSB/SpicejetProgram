@@ -71,6 +71,23 @@ public class Spicejet {
 	    
 	    //Clicking on search button
 	    driver.findElement(By.xpath("//input[@id='ctl00_mainContent_btn_FindFlights']")).click();
+	    
+	    String title = driver.getTitle();
+	    System.out.println("The title of the page is :\n"+title);
+	    
+	    WebElement element = driver.findElement(By.xpath("//span[@class='trip-detrails-sector']"));
+	    String text = element.getText();
+	    System.out.println("The text present is:\n"+text);
+	    
+	    if(text.contains("Chennai to Bengaluru"))
+	    {
+	    	System.out.println("Text is matched");
+	    }
+	    else
+	    {
+	    	System.out.println("Text is not matching");
+	    }
+	    
 	}
 
 }
